@@ -18,9 +18,18 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
-        #'ABC'              => 1.6,
-        #'Foo::Bar::Module' => 5.0401,
+	Moose			=> 0,
+	namespace::autoclean 	=> 0,
     },
+    (! eval { ExtUtils::MakeMaker->VERSION(6.46) } ? () :
+        (META_ADD => {
+    	    resources => {
+                homepage   => 'https://github.com/Leprevost/Lingua-Sindarin-Dictionary',
+                repository => 'https://github.com/Leprevost/Lingua-Sindarin-Dictionary.git',
+                bugtracker => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Lingua-Sindarin-Dictionary',
+            },
+        })
+    ),
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Lingua-Sindarin-Dictionary-*' },
 );
