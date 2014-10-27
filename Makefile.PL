@@ -18,8 +18,8 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
-	Moose			=> 0,
-	namespace::autoclean 	=> 0,
+	'Moose'                 => 0,
+	'namespace::autoclean' 	=> 0,
     },
     (! eval { ExtUtils::MakeMaker->VERSION(6.46) } ? () :
         (META_ADD => {
